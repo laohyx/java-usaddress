@@ -12,55 +12,12 @@
         <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.apache.hive/hive-exec -->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.hadoop</groupId>-->
-            <!--<artifactId>hadoop-client</artifactId>-->
-            <!--<version>2.5.0</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.apache.hive</groupId>-->
-            <!--<artifactId>hive-jdbc</artifactId>-->
-            <!--<version>0.13.1</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.apache.hive</groupId>-->
-            <!--<artifactId>hive-exec</artifactId>-->
-            <!--<version>0.13.1</version>-->
-        <!--</dependency>-->
-
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.7</version>
         </dependency>
 
-
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.python/jython &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.python</groupId>-->
-            <!--<artifactId>jython</artifactId>-->
-            <!--<version>2.7.0</version>-->
-        <!--</dependency>-->
-
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.python/jython-standalone &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.python</groupId>-->
-            <!--<artifactId>jython-standalone</artifactId>-->
-            <!--<version>2.7.0</version>-->
-        <!--</dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>com.github.vinhkhuc</groupId>-->
-<!--            <artifactId>jcrfsuite</artifactId>-->
-<!--            <version>0.6.1</version>-->
-<!--            <type>jar</type>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${basedir}/libs/jcrfsuite-0.6.1.jar</systemPath>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>com.github.vinhkhuc</groupId>
             <artifactId>jcrfsuite</artifactId>
