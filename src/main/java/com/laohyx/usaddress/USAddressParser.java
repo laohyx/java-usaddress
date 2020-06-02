@@ -6,6 +6,8 @@ import com.laohyx.usaddress.feature.BoolFeature;
 import com.laohyx.usaddress.feature.DictFeature;
 import com.laohyx.usaddress.feature.Feature;
 import com.laohyx.usaddress.feature.StringFeature;
+import java.io.File;
+import java.net.URL;
 import org.apache.commons.lang3.StringUtils;
 import third_party.org.chokkan.crfsuite.ItemSequence;
 
@@ -48,7 +50,6 @@ public class USAddressParser {
     public static final String GROUP_LABEL = "AddressCollection";
 
     public static final String MODEL_FILE = "usaddr.crfsuite";
-    public static final String MODEL_PATH = "./" + MODEL_FILE;
 
     public static final Set<String> DIRECTIONS = new HashSet<>(Arrays.asList("n", "s", "e", "w",
             "ne", "nw", "se", "sw",
@@ -131,7 +132,9 @@ public class USAddressParser {
     public static CrfTagger tagger;
 
     static {
-        tagger = new CrfTagger(MODEL_PATH);
+        URL url = USAddressParser.class.getClassLoader().getResource(MODEL_FILE);
+        String path = url.getPath();
+        tagger = new CrfTagger(path);
     }
 
 
