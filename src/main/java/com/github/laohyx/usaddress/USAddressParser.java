@@ -6,8 +6,12 @@ import com.github.laohyx.usaddress.feature.DictFeature;
 import com.github.laohyx.usaddress.feature.BoolFeature;
 import com.github.laohyx.usaddress.feature.Feature;
 import com.github.laohyx.usaddress.feature.StringFeature;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.reflect.FieldUtils;
 import third_party.org.chokkan.crfsuite.ItemSequence;
 
 import java.util.*;
@@ -135,9 +139,15 @@ public class USAddressParser {
     public static CrfTagger tagger;
 
     static {
-        URL url = USAddressParser.class.getClassLoader().getResource(MODEL_FILE);
-        String path = url.getPath();
-        tagger = new CrfTagger(path);
+        try {
+            URL url = USAddressParser.class.getClassLoader().getResource(MODEL_FILE);
+            File tempFile = File.createTempFile("crfsuite", ".model");
+            FileUtils.copyURLToFile(url, tempFile);
+            String path = tempFile.getPath();
+            tagger = new CrfTagger(path);
+        } catch (IOException e) {
+            throw new RuntimeException("Cannot initialize the model!", e);
+        }
     }
 
 
