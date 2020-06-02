@@ -1,12 +1,11 @@
-package com.laohyx.usaddress;
+package com.github.laohyx.usaddress;
 
 import com.github.jcrfsuite.CrfTagger;
 import com.github.jcrfsuite.util.Pair;
-import com.laohyx.usaddress.feature.BoolFeature;
-import com.laohyx.usaddress.feature.DictFeature;
-import com.laohyx.usaddress.feature.Feature;
-import com.laohyx.usaddress.feature.StringFeature;
-import java.io.File;
+import com.github.laohyx.usaddress.feature.DictFeature;
+import com.github.laohyx.usaddress.feature.BoolFeature;
+import com.github.laohyx.usaddress.feature.Feature;
+import com.github.laohyx.usaddress.feature.StringFeature;
 import java.net.URL;
 import org.apache.commons.lang3.StringUtils;
 import third_party.org.chokkan.crfsuite.ItemSequence;
@@ -15,6 +14,10 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * The parser class for usaddress.
+ * This will load a CRF model from resource folder.
+ */
 public class USAddressParser {
 
     public static final String[] LABLES = new String[]{
@@ -138,6 +141,11 @@ public class USAddressParser {
     }
 
 
+    /**
+     * Parse an address string and return words with tags.
+     * @param addressString the input address string
+     * @return list of words with tags
+     */
     public static List<Pair<String, String>> parse(String addressString) {
         List<Pair<String, String>> result = new ArrayList<>();
         List<String> tokens = tokenize(addressString);

@@ -1,4 +1,4 @@
-package com.laohyx.usaddress;
+package com.github.laohyx.usaddress;
 
 import static org.junit.jupiter.api.Assertions.*;
 

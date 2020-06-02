@@ -1,4 +1,4 @@
-package com.laohyx.usaddress.feature;
+package com.github.laohyx.usaddress.feature;
 
 public class BoolFeature extends Feature {
     boolean value;

@@ -1,4 +1,4 @@
-package com.laohyx.usaddress.feature;
+package com.github.laohyx.usaddress.feature;
 
 import third_party.org.chokkan.crfsuite.Attribute;
 import third_party.org.chokkan.crfsuite.Item;

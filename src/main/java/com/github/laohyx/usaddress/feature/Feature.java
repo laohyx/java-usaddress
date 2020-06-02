@@ -1,4 +1,4 @@
-package com.laohyx.usaddress.feature;
+package com.github.laohyx.usaddress.feature;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
