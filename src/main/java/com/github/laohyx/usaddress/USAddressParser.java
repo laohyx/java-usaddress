@@ -189,7 +189,10 @@ public class USAddressParser {
         // 现在创建 matcher 对象
         Matcher m = r.matcher(addressString);
         while (m.find()) {
-            result.add(m.group(0));
+            String token = m.group(0).trim();
+            if (!token.isEmpty()) {
+                result.add(token);
+            }
         }
         return result;
     }
