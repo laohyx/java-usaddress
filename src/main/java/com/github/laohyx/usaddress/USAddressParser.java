@@ -189,10 +189,7 @@ public class USAddressParser {
         // 现在创建 matcher 对象
         Matcher m = r.matcher(addressString);
         while (m.find()) {
-            String token = m.group(0).trim();
-            if (!token.isEmpty()) {
-                result.add(token);
-            }
+            result.add(m.group(0));
         }
         return result;
     }
@@ -234,7 +231,7 @@ public class USAddressParser {
 
         String tokenAbbrev = tokenClean.toLowerCase().replaceAll("[.]", "");
         DictFeature f = new DictFeature();
-        f.put("abbrev", tokenClean.charAt(tokenClean.length() - 1) == '.');
+        f.put("abbrev", !tokenClean.isEmpty() && tokenClean.charAt(tokenClean.length() - 1) == '.');
         f.put("digits", digits(tokenClean));
         f.put("word", !StringUtils.isNumeric(tokenAbbrev) ? new StringFeature(tokenAbbrev) : new BoolFeature(false));
         f.put("trailing.zeros", StringUtils.isNumeric(tokenAbbrev) ? new StringFeature(trailingZeros(tokenAbbrev)) : new BoolFeature(false));
