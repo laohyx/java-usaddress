@@ -35,6 +35,15 @@ class USAddressParserTest {
     assertPairEquals(new Pair<>("NY", "StateName"), result.get(5));
   }
 
+  @Test
+  public void parseWrong1() {
+    String addr = "ｐｓｃ NY";
+    List<Pair<String, String>> result = USAddressParser.parse(addr);
+    assertEquals(2, result.size());
+    assertPairEquals(new Pair<>("ｐｓｃ", "PlaceName"), result.get(0));
+    assertPairEquals(new Pair<>("NY", "StateName"), result.get(1));
+  }
+
   private void assertPairEquals(Pair<String, String> p1, Pair<String, String> p2) {
     assertEquals(p1.first, p2.first);
     assertEquals(p1.second, p2.second);

@@ -7,7 +7,7 @@ Java port of https://github.com/datamade/usaddress
 <dependency>
   <groupId>com.github.laohyx</groupId>
   <artifactId>java-usaddress</artifactId>
-  <version>0.1.3</version>
+  <version>0.1.4</version>
 </dependency>
 ```
 # Run the demo

@@ -240,7 +240,7 @@ public class USAddressParser {
         f.put("endsinpunc", Feature.createFromEndsinpunc(token));
         f.put("directional", DIRECTIONS.contains(tokenAbbrev));
         f.put("street_name", STREET_NAMES.contains(tokenAbbrev));
-        f.put("has.vowels", stringIntersect(tokenAbbrev.substring(1), "aeiou").size() > 0);
+        f.put("has.vowels", !tokenAbbrev.isEmpty() && stringIntersect(tokenAbbrev.substring(1), "aeiou").size() > 0);
         return f;
     }
 
